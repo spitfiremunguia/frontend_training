@@ -15,12 +15,15 @@ body{
 }
 
 .container{
+    border: 3px dotted black;
     display: flex;
     width: 90vw;
+    height: 90vh;
 
 }
 
 .panel{
+    z-index: 10000;
     background-size: auto 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -44,7 +47,7 @@ body{
 }
 
 .panel.active {
-    flex: 5;
+    flex: 3;
 }
 
 .panel.active h3{

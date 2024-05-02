@@ -1,10 +1,12 @@
 const panels = document.querySelectorAll('.panel')
+const container= document.querySelector('.container');
+var toggle = false;
 
 panels.forEach((panel)=>{
     panel.addEventListener('click',()=>{
         removeActiveClasses();
-        panel.classList.add('active');
-
+        toggle=!toggle;
+        panel.classList.toggle('active',toggle);
     });
 });
 
