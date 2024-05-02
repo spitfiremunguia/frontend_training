@@ -1,5 +1,4 @@
 const panels = document.querySelectorAll('.panel')
-const container= document.querySelector('.container');
 var toggle = false;
 
 panels.forEach((panel)=>{
