@@ -1,16 +1,101 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    /*variable declaration*/
+    --line-border-fill: #3489db;
+    --line-border-empty:#e0e0e0;
+}
 
 *{
     box-sizing: border-box;
 }
 
 body{
-    font-family: 'Roboto', sans-serif;
+    background-color: #f6f7fb;
+    font-family: 'Mulish', sans-serif;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: center;/*describes how the objets in a flex box are aligned in the vertical axis (cross axis)*/
+    justify-content: center;/*describes how the objets in a flex box are aligned in the horizontal axis (main axis)*/
     height: 100vh;
     overflow: hidden;
     margin:0;
+}
+
+.container{
+    text-align: center ;/*describes how an inline object is aligned to the main axis*/
+}
+
+.progress-container{
+    
+    display: flex;
+    justify-content:space-between; /*make objets in a flexbox to take the horizontal axis space evenly*/
+    position:relative; /*set position so I can move objets inside the flexbox later*/
+    margin-bottom: 30px;
+    width: 350px;
+}
+
+.progress-container::before{
+    content: '';
+    background-color: var(--line-border-empty);
+    position: absolute;
+    top:50%;
+    left:0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    z-index: -1;
+}
+
+.progress{
+    background-color: var(--line-border-fill);
+    position: absolute;
+    top:50%;
+    left:0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 10%;
+    z-index: -1;
+    transition: 0.4s ease;
+}
+.circle{
+    display: flex;
+    background-color: #fff;
+    color:#999;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    align-items: center;
+    justify-content: center;
+    border:3px solid var(--line-border-empty);
+    transition: .4s ease;
+}
+
+.circle.active{
+    border-color: var(--line-border-fill);
+}
+
+.btn{
+    background-color: var(--line-border-fill);
+    color:#fff;
+    border:0;
+    border-radius: 6px;
+    cursor:pointer;
+    font-family: inherit;
+    padding: 8px 30px;
+    margin: 14px;
+    font-size: 14px;
+}
+
+.btn:active{
+    transform: scale(0.98);
+}
+
+.btn:focus{
+    outline: 0;
+}
+
+.btn:disabled{
+    background-color: var(--line-border-empty);
+    cursor: not-allowed;
 }
